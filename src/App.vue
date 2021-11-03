@@ -5,9 +5,9 @@
     <br />
     <div class="row">
       <div class="col-md-12 text-center">
-        <TranslateForm @translatedEvent="translatedText = $event" />
+        <TranslateForm @translatedEvent="translatedText = $event" @historyEvent="history.push($event)" />
         <h3 class="text-success text-center">{{ translatedText }}</h3>
-        <SearchHistory />
+        <SearchHistory :history="history" />
       </div>
     </div>
   </div>
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       translatedText: '',
+      history: [],
     };
   },
 };

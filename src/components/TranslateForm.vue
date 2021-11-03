@@ -5,7 +5,7 @@
       <option v-for="(value, key) in languages" :value="key" :key="key">{{ value }}</option>
     </select>
     <br />
-    <div class="text-left"><strong>Detected Language : </strong>{{ detectedLang }}</div>
+    <div class="text-left" v-if="detectedLang"><strong>Detected Language : </strong>{{ detectedLang }}</div>
     <br />
     <button type="submit" class="btn btn-primary btn-block">Translate!</button>
   </form>
@@ -29,9 +29,19 @@ export default {
       axios
         .get(url)
         .then((response) => {
+          console.log(response);
           this.detectedLang = this.languages[this.translateTo];
-          console.log(`response`, response);
           this.$emit('translatedEvent', response.data.text[0]);
+
+          let history = {
+            from: this.languages[response.data.lang.split('-')[0]],
+            to: this.detectedLang,
+            translateText: this.translateText,
+            translatedText: response.data.text[0],
+          };
+          this.$emit('historyEvent', history);
+          this.translateTo = '';
+          this.translateText = '';
         })
         .catch((e) => console.log(e));
     },

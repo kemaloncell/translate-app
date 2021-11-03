@@ -1,15 +1,15 @@
 <template>
-  <div class="well">
+  <div class="well" v-if="history.length > 0">
     <h3>Search History</h3>
     <ul class="list-group text-left">
-      <li class="list-group-item">
+      <li class="list-group-item" v-for="(items, i) in history" :key="i">
         <div>
-          <strong></strong>
+          <strong>{{ items.from }} => {{ items.to }}</strong>
         </div>
         <br />
         <div>
-          <strong class="text-success"></strong>
-          <span class="text-info"></span>
+          <strong class="text-success">{{ items.translateText }} : </strong>
+          <span class="text-info">{{ items.translatedText }}</span>
         </div>
       </li>
     </ul>
@@ -17,7 +17,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['history'],
+};
 </script>
 
 <style scoped></style>
