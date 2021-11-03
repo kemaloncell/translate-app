@@ -1,5 +1,17 @@
 # translate-app
 
+
+#### Photos
+
+![alt text](https://github.com/kemaloncell/translate-app/blob/main/src/assets/img/Screenshot_1.png)
+
+![alt text](https://github.com/kemaloncell/translate-app/blob/main/src/assets/img/Screenshot_2.png)
+
+![alt text](https://github.com/kemaloncell/translate-app/blob/main/src/assets/img/Screenshot_3.png)
+
+![alt text](https://github.com/kemaloncell/translate-app/blob/main/src/assets/img/Screenshot_4.png)
+
+
 ## Project setup
 ```
 npm install
