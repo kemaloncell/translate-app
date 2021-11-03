@@ -1,0 +1,23 @@
+<template>
+  <div class="well">
+    <h3>Search History</h3>
+    <ul class="list-group text-left">
+      <li class="list-group-item">
+        <div>
+          <strong></strong>
+        </div>
+        <br />
+        <div>
+          <strong class="text-success"></strong>
+          <span class="text-info"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped></style>
